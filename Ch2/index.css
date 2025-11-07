@@ -1,0 +1,31 @@
+body {
+    font-family: "Roboto", serif;
+    width: 500px;
+    margin: 2em auto;
+}
+h1 {
+    font-size: 3em;
+}
+label {
+    display: block;
+    font-style: italic;
+    margin-bottom: .25em;
+}
+input, button {
+    font-family: inherit;
+    padding: .5em;
+    font-size: 1em;
+}
+
+button:disabled {
+    transition: color 0.5s ease-out;
+}
+
+
+button:enabled {
+    transition: color 0.5s ease-out;
+
+}
+.done {
+     text-decoration: line-through;
+ }
