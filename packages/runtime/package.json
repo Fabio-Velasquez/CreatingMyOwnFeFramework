@@ -1,0 +1,37 @@
+{
+  "name": "linuxalgaibfeframework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/linuxalgaibfeframework",
+  "scripts": {
+    "prepack": "npm run build",
+    "build": "rollup -c",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "docs": "jsdoc -c jsdoc.json"
+  },
+  "files": [
+    "dist/linuxalgaibfeframework.js"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.8",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.37.0",
+    "jsdoc": "^4.0.5",
+    "jsdom": "^27.0.1",
+    "rollup": "^4.52.5",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-filesize": "^10.0.0",
+    "vitest": "^3.2.3"
+  },
+  "dependencies": {
+    "npm": "^10.9.4"
+  }
+}
