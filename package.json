@@ -1,0 +1,15 @@
+{
+  "name": "linuxalgaibfeframework-project",
+  "version": "1.0.0",
+  "main": "examples/ch02/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:examples": "npx http-server . -o ./examples/"
+  },
+  "workspaces": ["packages/runtime"],
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Trying to understand the internals of FE frameworks and see where it takes me."
+}
