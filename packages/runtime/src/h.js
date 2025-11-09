@@ -30,7 +30,7 @@ function mapTextNodes(children) {
 
 /**
  *
- * @param tag
+ * @param tag html tag element name
  * @param props
  * @param children
  */
