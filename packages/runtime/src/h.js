@@ -31,7 +31,7 @@ function mapTextNodes(children) {
 /**
  *
  * @param tag html tag element name
- * @param props
+ * @param props attributes of respected tag
  * @param children
  */
 export function h(tag, props = {}, children = []) {
