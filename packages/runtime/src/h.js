@@ -11,10 +11,20 @@ export const DOM_TYPES = {
     FRAGMENT: 'fragment',
 }
 
+/**
+ *
+ * @param str element's text
+ * @returns {{type: string, text: *}} v dom node for text elements
+ */
 export function hString(str) {
     return  {type: DOM_TYPES.TEXT, text: str};
 }
 
+/**
+ *
+ * @param vNodes an array of virtual nodes
+ * @returns {{type: string, children: *}} a container for an array of virtual nodes
+ */
 export function hFragment(vNodes) {
     return {
         type: DOM_TYPES.FRAGMENT,
@@ -22,6 +32,11 @@ export function hFragment(vNodes) {
     };
 }
 
+/**
+ *
+ * @param children
+ * @returns {*}
+ */
 function mapTextNodes(children) {
     return children.map((child) => {
         typeof child === 'string' && hString(child) !== null
@@ -29,10 +44,10 @@ function mapTextNodes(children) {
 }
 
 /**
- *
+ * hyperscript to return virtual nodes
  * @param tag html tag element name
  * @param props attributes of respected tag
- * @param children
+ * @param children node's child elements
  */
 export function h(tag, props = {}, children = []) {
     return {
