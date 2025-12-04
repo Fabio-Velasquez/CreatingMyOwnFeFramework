@@ -62,3 +62,9 @@ export function removeAttribute(el, name) {
     el[name] = null
     el.removeAttribute(name)
 }
+
+export function removeEventListeners(listeners = {}, el) {
+    Object.entries(listeners).forEach(([eventName, handler]) => {
+        el.removeEventListener(eventName, handler)
+    })
+}
