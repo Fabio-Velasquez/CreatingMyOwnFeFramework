@@ -1,4 +1,5 @@
-import {DOM_TYPES} from "./h";
+import {DOM_TYPES, h} from "./h.js";
+import {setAttributes} from "./events";
 
 /**
  *  Create the respected Node type when
@@ -33,7 +34,7 @@ function createTextNode(vdom, parentEl) {
     vdom.el = textNode;
     parentEl.append(textNode);
 }
-function createFragmentNode(vdom, parentEl) {
+function createFragmentNodes(vdom, parentEl) {
     const { children } = vdom;
     vdom.el = parentEl;
     children.forEach(child => {
@@ -55,4 +56,14 @@ function addProps(element, props, vdom) {
     setAttributes(el, attrs);
 }
 
+
+
+
+// const vdom = h('section', {} [
+//     h('h1', {}, ['My Blog']),
+//     h('p', {}, ['Welcome to my blog!'])
+//     ]
+// );
+
+// console.log(mountDom(vdom, document.body))
 
