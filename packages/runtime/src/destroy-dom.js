@@ -46,3 +46,8 @@ function removeElementNode(vdom) {
         delete vdom.listeners
     }
 }
+
+function removeFragmentNodes(vdom) {
+    const { children } = vdom
+    children.forEach(destroyDOM)
+}
