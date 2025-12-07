@@ -1,5 +1,6 @@
 import {DOM_TYPES, h} from "./h.js";
-import {setAttributes} from "./events";
+import {setAttributes} from "./attributes";
+import {addEventListeners} from "./events";
 
 /**
  * File Description:
@@ -7,14 +8,14 @@ import {setAttributes} from "./events";
  *  functions depends on the Vdom object and
  *  the parent element which is the parent container html element
  *  that would be appended to
- *  Also supports attaching event listerner and parent references to the respected DOM object.
+ *  Also supports attaching event listener and parent references to the respected DOM object.
  */
 
 /**
  *  Create the respected Node type when
  *  mounting the vdom to the real dom
  * @param vdom virtual dom
- * @param parentEl the respected parent DOM element (most likly the body) to be attached to.
+ * @param parentEl the respected parent DOM element (most likely the body) to be attached to.
  */
 export function mountDom(vdom, parentEl) {
     switch (vdom.type) {
