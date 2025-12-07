@@ -60,21 +60,21 @@ export function h(tag, props = {}, children = []) {
 
 
 
-
-h('form', { class: 'login-form', action: 'login' }, [
-    h('input', { type: 'text', name: 'user' }),
-    h('input', { type: 'password', name: 'pass' }),
-    h('button', { on: { click: 'login' } }, ['Log in'])
-])
-hFragment([
-    h('h1', {class: 'title'}, ['My Counter']),
-    h('div', {class: 'container'},
-        [
-                h('button', {},['decrement']),
-                h('span',{},['0'])
-                ]
-        )
-    ]);
+//
+// h('form', { class: 'login-form', action: 'login' }, [
+//     h('input', { type: 'text', name: 'user' }),
+//     h('input', { type: 'password', name: 'pass' }),
+//     h('button', { on: { click: 'login' } }, ['Log in'])
+// ])
+// hFragment([
+//     h('h1', {class: 'title'}, ['My Counter']),
+//     h('div', {class: 'container'},
+//         [
+//                 h('button', {},['decrement']),
+//                 h('span',{},['0'])
+//                 ]
+//         )
+//     ]);
 
 export function lipsum(numOfParagraphs = 0) {
     const nodes = [];

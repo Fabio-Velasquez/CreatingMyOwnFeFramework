@@ -1,7 +1,7 @@
 import {DOM_TYPES, h} from "./h.js";
 import {setAttributes} from "./attributes.js";
 import {addEventListeners} from "./events.js";
-import {JSDOM} from "jsdom";
+
 
 /**
  * File Description:
@@ -18,7 +18,7 @@ import {JSDOM} from "jsdom";
  * @param vdom virtual dom
  * @param parentEl the respected parent DOM element (most likely the body) to be attached to.
  */
-export function mountDom(vdom, parentEl) {
+export function  mountDom(vdom, parentEl) {
     switch (vdom.type) {
         case DOM_TYPES.TEXT: {
             createTextNode(vdom,parentEl);
@@ -104,10 +104,10 @@ const vdom = h('section', {} [
         h('p', {}, ['Welcome to my blog!'])
     ]);
 
-const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
-global.document = dom.window.document;
-global.window = dom.window;
-
-mountDom(vdom, document.body);
+// const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
+// global.document = dom.window.document;
+// global.window = dom.window;
+//
+// mountDom(vdom, document.body);
 // console.log(vdom)
 

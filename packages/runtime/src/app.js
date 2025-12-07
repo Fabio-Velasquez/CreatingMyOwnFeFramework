@@ -1,6 +1,6 @@
-import {destroyDOM} from './destroy-dom'
-import {mountDOM} from './mount-dom'
-import {Dispatcher} from "./dispatcher";
+import {destroyDOM} from './destroy-dom.js'
+import {mountDom} from './mountDom.js'
+import {Dispatcher} from './dispatcher.js';
 
 /**
  *
@@ -41,7 +41,7 @@ export function createApp({state, view,  reducers = {}}) {
         }
 
         vdom = view(state, emit);
-        mountDOM(vdom, parentEl)
+        mountDom(vdom, parentEl)
     }
     /*
     returns an object with methods to mount and unmount DOM
