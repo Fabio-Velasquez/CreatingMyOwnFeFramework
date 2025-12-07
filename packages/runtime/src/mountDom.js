@@ -1,6 +1,7 @@
 import {DOM_TYPES, h} from "./h.js";
-import {setAttributes} from "./attributes";
-import {addEventListeners} from "./events";
+import {setAttributes} from "./attributes.js";
+import {addEventListeners} from "./events.js";
+import {JSDOM} from "jsdom";
 
 /**
  * File Description:
@@ -94,4 +95,19 @@ function addProps(element, props, vdom) {
     setAttributes(element, attrs);
 }
 
+
+
+
+
+const vdom = h('section', {} [
+    h('h1', {}, ['My Blog']),
+        h('p', {}, ['Welcome to my blog!'])
+    ]);
+
+const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
+global.document = dom.window.document;
+global.window = dom.window;
+
+mountDom(vdom, document.body);
+// console.log(vdom)
 
