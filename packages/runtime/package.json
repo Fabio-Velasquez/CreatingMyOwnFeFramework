@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/linuxalgaibfeframework",
+  "type": "module",
   "scripts": {
     "prepack": "npm run build",
     "build": "rollup -c",

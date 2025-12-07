@@ -6,10 +6,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve:examples": "npx http-server . -o ./examples/"
   },
-  "workspaces": ["packages/runtime"],
+  "workspaces": [
+    "packages/runtime"
+  ],
   "private": true,
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "Trying to understand the internals of FE frameworks and see where it takes me."
+  "description": "Trying to understand the internals of FE frameworks and see where it takes me.",
+  "dependencies": {
+    "jsdom": "^27.2.0"
+  }
 }
