@@ -16,7 +16,7 @@ export class Dispatcher {
             handlers.splice(idx, 1);
         };
     }
-    afterEveryCommnad(handler) {
+    afterEveryCommand(handler) {
         this.#afterHandlers.push(handler);
         return () => {
             const idx = this.#afterHandlers.indexOf(handler);
