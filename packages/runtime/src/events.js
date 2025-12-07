@@ -1,8 +1,32 @@
+/**
+ *  attaches respected event name with handler to DOM object
+ * @param eventName browser's event name as a key value
+ * @param handler handler function logic as value for respected event
+ * @param el DOM object with
+ * @returns {*}
+ */
 export function addEventListener(eventName, handler, el) {
     el.addEventListener(eventName, handler);
     return handler;
 }
 
+/**
+ * returns an object of eventNames with the respected handler function logic
+ * EXAMPLE: {
+ *   type: DOM_TYPES.ELEMENT,
+ *   tag: 'button',
+ *   props: {
+ *     on: {
+ *       mouseover: () => console.log('almost yay!'),
+ *       click: () => console.log('yay!') ,
+ *       dblclick: () => console.log('double yay!'),
+ *     }
+ *   }
+ * }
+ * @param listeners event listeners
+ * @param el html tag
+ * @returns {{eventName: (dblclick) => {doSomethinCool}}
+ */
 export function addEventListeners(listeners = {}, el) {
     const addedListeners = {};
     Object.entries(listeners).forEach(([eventName, handler]) => {
@@ -10,57 +34,6 @@ export function addEventListeners(listeners = {}, el) {
         addedListeners[eventName] = listener;
     });
     return addedListeners;
-}
-
-function setClass(el, className) {
-    el.className = '';
-    if (typeof className === 'string') {
-        el.className = className;
-    }
-
-    if(Array.isArray(className)) {
-        el.classList.add(...className);
-    }
-}
-
-export function setStyle(el, name, value) {
-    el.style[name] = value;
-}
-
-export function removeStyle(el, name) {
-    el.style[name] = null;
-}
-
-
-export function setAttributes(el, attrs) {
-    const { class: className, style, ...otherAttrs} = attrs;
-    if (className) {
-        setClass(el, className);
-    }
-    if (style) {
-        Object.entries(style).forEach(([prop, value]) => {
-           setStyle(el, prop, value);
-        });
-    }
-
-    for (const [name, value] of Object.entries(otherAttrs)) {
-        setAttributes(el, name, value);
-    }
-}
-export function setAttribute(el, name, value) {
-    if (value == null) {
-        removeAttribute(el, name)
-    } else if (name.startsWith('data-')) {
-        el.setAttribute(name, value)
-    } else {
-        el[name] = value
-    }
-}
-
-
-export function removeAttribute(el, name) {
-    el[name] = null
-    el.removeAttribute(name)
 }
 
 export function removeEventListeners(listeners = {}, el) {

@@ -1,8 +1,8 @@
-import {withoutNulls} from './utils/arrays'
+import {withoutNulls} from './utils/arrays.js'
 
 const NODE_TEXT_HOLDER = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 /**
- * Constant Representation of our DOM TYPES
+ * Constant Representation of our Virtual DOM TYPES
  * @type {{TEXT: string, ELEMENT: string, FRAGMENT: string}}
  */
 export const DOM_TYPES = {
@@ -61,20 +61,20 @@ export function h(tag, props = {}, children = []) {
 
 
 
-// h('form', { class: 'login-form', action: 'login' }, [
-//     h('input', { type: 'text', name: 'user' }),
-//     h('input', { type: 'password', name: 'pass' }),
-//     h('button', { on: { click: login } }, ['Log in'])
-// ])
-// hFragment([
-//     h('h1', {class: 'title'}, ['My Counter']),
-//     h('div', {class: 'container'},
-//         [
-//                 h('button', {},['decrement']),
-//                 h('span',{},['0'])
-//                 ]
-//         )
-//     ]);
+h('form', { class: 'login-form', action: 'login' }, [
+    h('input', { type: 'text', name: 'user' }),
+    h('input', { type: 'password', name: 'pass' }),
+    h('button', { on: { click: 'login' } }, ['Log in'])
+])
+hFragment([
+    h('h1', {class: 'title'}, ['My Counter']),
+    h('div', {class: 'container'},
+        [
+                h('button', {},['decrement']),
+                h('span',{},['0'])
+                ]
+        )
+    ]);
 
 export function lipsum(numOfParagraphs = 0) {
     const nodes = [];
